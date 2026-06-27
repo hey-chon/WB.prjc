@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background: whitesmoke;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+nav {
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  background: whitesmoke;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+nav .navbar {
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav .login button {
+  background-color: black;
+  color: white;
+  padding: 5px 25px;
+  font-size: 18px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  padding: 0 5%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+header .home-page {
+  flex: 1;
+  min-width: 300px;
+}
+
+header .home-page h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+header .home-page h1 span {
+  color: gray;
+  font-weight: 700;
+}
+
+header .home-page p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+header img {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 50%;
+  min-width: 300px;
+}
+
+section {
+  padding: 80px 5%;
+}
+
+.about, .author {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.about.img, .author-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-content, .author-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-content h1,
+.author-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.social-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 0 5%;
+  font-size: 1.2rem;
+}
+
+.social-box {
+  background-color: white;
+  border-radius: 30px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: 0.4s;
+  border: 5px solid transparent;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.social-box:hover {
+  background: black;
+  color: white;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 992px) {
+  header .home-page h1 {
+    font-size: 3rem;
+  }
+  
+  .about-content h1,
+  .author-content h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .navbar {
+    display: none;
+  }
+
+  header {
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  header img {
+    margin: 30px auto;
+  }
+
+  .about, .author {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .social-box {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header .home-page h1 {
+    font-size: 2.4rem;
+  }
+  
+  nav {
+    padding: 0 15px;
+  }
+  
+  .social-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: whitesmoke;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+}
+
+/* Navbar Underline Hover Effect */
+.navbar a {
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: black;
+  transition: width 0.4s ease;
+  border-radius: 3px;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a.active::after {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.made-by {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f5f5f5;
+  margin-top: 50px;
+}
+
+.made-by h5 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.jimson-ilog, .defnot-chon, .my-github {
+  color: gray;
+  font-weight: 1000;
+}
+
+.my-name {
+  color: black;
+  font-weight: 1000;
+}
+
+.dev {
+  color: gray;
+  font-weight: 900;
+}
