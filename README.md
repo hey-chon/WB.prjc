@@ -35,7 +35,7 @@ Started learning web development since Grade 9. This project serves as my person
 
 ## 🔗 Links
 
-- **Live Demo**: [Add your Netlify / GitHub Pages link here]
+- **Live Demo**: (https://wb-prjc.vercel.app/)
 - **Facebook**: [Jimson Ilog](https://www.facebook.com/share/18JefUQRUc/?mibextid=wwXIfr)
 - **Instagram**: [@hey.chon](https://www.instagram.com/hey.chon)
 - **GitHub**: [@hey-chon](https://github.com/hey-chon)
